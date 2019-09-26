@@ -1,0 +1,37 @@
+<view class="cu-bar bg-white" wx:if="{{bloginfo.length==0}}">
+  <view class="action">
+    <text class="cuIcon-title text-orange"></text> 暂无收藏
+  </view>
+</view>
+<view class="cu-bar bg-white" wx:if="{{bloginfo.length!=0}}">
+  <view class="action">
+    <text class="cuIcon-title text-orange"></text> 我的收藏
+  </view>
+</view>
+<view wx:for="{{bloginfo}}" wx:key="key" wx:for-index="index" wx:for-item="item">
+  <view class="solid-bottom"></view>
+  <view class="cu-card case no-card">
+    <view class="cu-item shadow">
+      <view class="image" bindtap="viewItem" data-item="{{item}}" data-user="{{userinfo[index]}}">
+        <image src="{{item.picture}}" mode="aspectFit" style='height: 288rpx;'></image>
+        <view class="cu-bar bg-shadeBottom">
+          <text class="text-cut">{{item.title}}</text>
+        </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{userinfo[index].avatarUrl}});"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">{{userinfo[index].nickName}}</view>
+            <view class="text-gray text-sm flex justify-between">
+              {{item.datetime}}
+              <view class="text-gray text-xxl">
+                <text class="cuIcon-likefill margin-lr-xs text-red" data-item="{{item}}" data-index="{{index}}" bindtap='onRemoveCollect'></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

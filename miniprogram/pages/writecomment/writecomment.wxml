@@ -1,0 +1,6 @@
+<form>
+  <view class="cu-form-group margin-top">
+    <textarea maxlength="-1" bindinput="textareaInput" placeholder="输入内容"></textarea>
+  </view>
+</form>
+<button class="cu-btn block bg-blue margin-tb-sm margin-lr-sm lg" bindtap="writecommentBt">评论</button>

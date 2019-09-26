@@ -1,0 +1,28 @@
+<view wx:for="{{bloginfo}}" wx:key="key" wx:for-index="index" wx:for-item="item">
+  <view class="solid-bottom"></view>
+  <view class="cu-card case no-card">
+    <view class="cu-item shadow">
+      <view class="image" bindtap="viewItem" data-item="{{item}}" data-user="{{userinfo[index]}}">
+        <image src="{{item.picture}}" mode="widthFix"></image>
+        <view class="cu-bar bg-shadeBottom">
+          <text class="text-cut">{{item.title}}</text>
+        </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{userinfo[index].avatarUrl}});"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">{{userinfo[index].nickName}}</view>
+            <view class="text-gray text-sm flex justify-between">
+              {{item.datetime}}
+              <view class="text-gray text-sm">
+                <text class="cuIcon-likefill margin-lr-xs"></text> {{item.collectNum}}
+                <text class="cuIcon-messagefill margin-lr-xs"></text> {{item.commentNum}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<view class=' bg-white padding-xl radius shadow-lg'>
+  <!-- <image class='bg-white' src='{{blogdata.picture}}' mode="aspectFit"></image> -->
+  <view class='text-content text-xl'>
+    <view>{{blogdata.content}}</view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-item">
+    <view class="content">
+      <view class="cu-avatar round lg" style="background-image:url({{bloguserdata.avatarUrl}});"></view>
+      <view class="text-grey">{{bloguserdata.nickName}}</view>
+      <view class="text-gray text-sm">
+        <text>创建于</text>{{blogdata.datetime}}</view>
+    </view>
+    <view style='text-align:right;'>
+      <view class="margin-top-sm text-lg {{isHavaCollect==true?'text-red':''}} " bindtap='onCollect'>
+        <text class="cuIcon-likefill"></text>收藏</view>
+    </view>
+  </view>
+</view>
+<view bindtap="writecomment" class="text-blue text-lg" style='text-align:right;margin: 30rpx;'>写评论</view>
+
+
+<view wx:for="{{commentinfo}}" wx:key="key" wx:for-index="index" wx:for-item="item">
+  <view class="cu-list menu-avatar comment solids-top">
+    <view class="cu-item" style='background-color:#f1f1f1'>
+      <view class="cu-avatar round" style="background-image:url({{commentuserinfo[index].avatarUrl}});"></view>
+      <view class="content">
+        <view class="text-grey">{{commentuserinfo[index].nickName}}</view>
+        <view class="text-gray text-content text-df">
+          {{ item.content}}
+        </view>
+        <view class="margin-top-sm flex justify-between">
+          <view class="text-gray text-df">{{ item.commentdate}}</view>
+        </view>
+        <view bindtap="delcomment" data-id="{{item._id}}" data-commentindex="{{index}}" wx:if="{{item.openid==myopenid}}" class="text-df text-red text-del">删除</view>
+      </view>
+    </view>
+  </view>
+</view>

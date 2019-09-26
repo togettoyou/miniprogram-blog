@@ -1,0 +1,4 @@
+/* pages/blogDetail/blogDetail.wxss */
+.text-del{
+    width:40px;
+}

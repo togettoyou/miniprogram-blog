@@ -1,0 +1,13 @@
+/* pages/myBlog/myBlog.wxss */
+
+.add-wrap {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 5rpx;
+}
+.add-button{
+    margin-bottom: 10px;
+}

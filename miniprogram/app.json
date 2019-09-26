@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/me",
+    "pages/blogDetail/blogDetail",
+    "pages/myBlog/myBlog",
+    "pages/myCollect/myCollect",
+    "pages/publish/publish",
+    "pages/writecomment/writecomment"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "有糖薄荷糖",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabBar_index.png",
+        "selectedIconPath": "images/tabBar_index_fill.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/tabBar_me.png",
+        "selectedIconPath": "images/tabBar_me_fill.png"
+      }
+    ],
+    "color": "#707070",
+    "selectedColor": "#707070"
+  }
+}

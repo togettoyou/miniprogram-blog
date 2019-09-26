@@ -1,0 +1,34 @@
+<form>
+  <view class="cu-form-group">
+    <view class="title">标题</view>
+    <input placeholder="输入标题" bindinput="textInput"></input>
+  </view>
+
+  <view class="cu-form-group margin-top">
+    <textarea maxlength="-1" bindinput="textareaInput" placeholder="输入内容"></textarea>
+  </view>
+
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      图片上传
+    </view>
+    <view class="action">
+      {{imgList.length}}/1
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+      <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+        <image src='{{imgList[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+        <text class="cuIcon-cameraadd"></text>
+      </view>
+    </view>
+  </view>
+
+</form>
+<button class="cu-btn block bg-blue margin-tb-sm margin-lr-sm lg" bindtap="publishBt">发布</button>

@@ -1,0 +1,39 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+
+    <button mode="widthFix" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+
+
+    <view class="text-xl">{{nickName}}
+    </view>
+    <image src="../../images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+
+  <view wx:if="{{logged==true}}" class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right" bindtap="myblog">
+      <view class="text-xxl text-orange">{{blogNum}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-writefill"></text> 发布</view>
+    </view>
+    <view class="flex flex-sub flex-direction" bindtap="mycollect">
+      <view class="text-xxl text-blue">{{collectNum}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-likefill"></text> 收藏</view>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow" bindtap="aboutBt">
+      <view class="content">
+        <text class="cuIcon-formfill text-grey"></text>
+        <text class="text-grey">关于</text>
+      </view>
+    </view>
+    <view class="cu-item arrow" bindtap="adviceBt">
+      <view class="content">
+        <text class="cuIcon-creativefill text-grey"></text>
+        <text class="text-grey">意见反馈</text>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
