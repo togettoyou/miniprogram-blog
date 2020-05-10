@@ -19,6 +19,7 @@
 ### 使用到的第三方UI库
 
 
-| 名称    | GitHub地址 |
-| :------ | :--------- |
-| ColorUI | [ColorUI]( |
+| 名称    | GitHub地址                                     |
+| :------ | :--------------------------------------------- |
+| ColorUI | [ColorUI](https://github.com/weilanwl/ColorUI) |
+
